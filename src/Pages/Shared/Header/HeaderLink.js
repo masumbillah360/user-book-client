@@ -2,39 +2,33 @@ import React from "react";
 
 const HeaderLink = () => {
   return (
-    <ul className="menu d-none bg-base-100 rounded-box">
+    <ul className="menu bg-base-100 rounded-box">
       <li className="hover-bordered">
-        <a>Hover me</a>
+        <a>News Feed</a>
       </li>
       <li className="hover-bordered">
-        <a>Hover me</a>
+        <a>Create Post</a>
       </li>
       <li className="hover-bordered">
-        <a>Hover me</a>
+        <a>Your Post</a>
       </li>
       <li className="hover-bordered">
-        <a>Hover me</a>
+        <a>Group</a>
       </li>
       <li className="hover-bordered">
-        <a>Hover me</a>
+        <a>Pages</a>
       </li>
       <li className="hover-bordered">
-        <a>Hover me</a>
+        <a>Friends</a>
       </li>
       <li className="hover-bordered">
-        <a>Hover me</a>
+        <a>Live</a>
       </li>
       <li className="hover-bordered">
-        <a>Hover me</a>
+        <a>Videos</a>
       </li>
       <li className="hover-bordered">
-        <a>Hover me</a>
-      </li>
-      <li className="hover-bordered">
-        <a>Hover me</a>
-      </li>
-      <li className="hover-bordered">
-        <a>Hover me</a>
+        <a>Join Live</a>
       </li>
     </ul>
   );

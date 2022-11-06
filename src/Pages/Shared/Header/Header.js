@@ -45,7 +45,9 @@ const Header = () => {
             <HeaderLink />
           </ul>
         </div>
-        <Link className="btn btn-ghost normal-case text-xl">UserBook</Link>
+        <Link className="btn btn-ghost text-primary normal-uppercase text-xl">
+          UserBook
+        </Link>
       </div>
       <div className="navbar-center hidden md:flex">
         <ul className="menu menu-horizontal p-0">{navMenu}</ul>
