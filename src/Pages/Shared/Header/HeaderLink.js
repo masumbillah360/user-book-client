@@ -1,34 +1,35 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const HeaderLink = () => {
   return (
     <ul className="menu bg-base-100 rounded-box">
       <li className="hover-bordered">
-        <a>News Feed</a>
+        <Link to="/user/newsfeed">News Feed</Link>
       </li>
       <li className="hover-bordered">
-        <a>Create Post</a>
+        <Link to="/user/create-post">Create Post</Link>
       </li>
       <li className="hover-bordered">
-        <a>Your Post</a>
+        <Link to="/">Your Post</Link>
       </li>
       <li className="hover-bordered">
-        <a>Group</a>
+        <Link to="/">Group</Link>
       </li>
       <li className="hover-bordered">
-        <a>Pages</a>
+        <Link to="/">Pages</Link>
       </li>
       <li className="hover-bordered">
-        <a>Friends</a>
+        <Link to="/">Friends</Link>
       </li>
       <li className="hover-bordered">
-        <a>Live</a>
+        <Link to="/">Live</Link>
       </li>
       <li className="hover-bordered">
-        <a>Videos</a>
+        <Link to="/">Videos</Link>
       </li>
       <li className="hover-bordered">
-        <a>Join Live</a>
+        <Link to="/">Join Live</Link>
       </li>
     </ul>
   );

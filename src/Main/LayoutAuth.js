@@ -8,11 +8,11 @@ const LayoutAuth = () => {
   return (
     <div>
       <Header />
-      <div className="grid grid-cols-12 gap-10">
-        <div className="col-span-3 hidden md:block">
+      <div className="grid grid-cols-12 md:gap-10">
+        <div className="md:col-span-3 hidden md:block">
           <LeftNav />
         </div>
-        <div className="col-span-9">
+        <div className="col-span-12 md:col-span-9">
           <Outlet />
         </div>
       </div>

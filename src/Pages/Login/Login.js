@@ -5,7 +5,7 @@ import SocialLogin from "./SocialLogin";
 const Login = () => {
   return (
     <div className="grid grid-cols-2 gap-6 justify-center items-center p-12">
-      <div className="text-center lg:text-right">
+      <div className="text-center lg:text-right col-span-2 md:col-span-1">
         <h1 className="text-5xl font-extrabold text-primary">UserBook</h1>
         <h1 className="text-5xl font-bold">Login now!</h1>
         <p className="py-6">
@@ -14,7 +14,7 @@ const Login = () => {
           id nisi.
         </p>
       </div>
-      <div className="card flex-shrink-0 w-fullshadow-2xl bg-base-100">
+      <div className="card flex-shrink-0 w-fullshadow-2xl bg-base-100 col-span-2 md:col-span-1">
         <div>
           <SocialLogin />
         </div>

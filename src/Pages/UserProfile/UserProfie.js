@@ -1,12 +1,12 @@
 import React from "react";
-import HeaderLinkHor from "../Shared/Header/HeaderLinkHor";
+import { Link } from "react-router-dom";
 
 const UserProfie = () => {
   return (
     <div className="card card-compact">
       <figure>
         <img
-          className="rounded-full h-48 w-48 bordered border-2 border-green-500"
+          className="rounded-full h-52 w-52 bordered border-2 border-green-500"
           src="https://placeimg.com/400/225/arch"
           alt="Shoes"
         />
@@ -16,18 +16,23 @@ const UserProfie = () => {
         <p>Eamil : halumalu@gm.com </p>
         <p> About : If a dog chews shoes whose shoes does he choose?</p>
         <p>
-          Description :Vexed harold dome nor wandered had, of found not isle
-          friend, present harold which so his there, ungodly wandered was
-          pilgrimage feels said are objects though earthly, she weary friend of
-          and passion, said her whateer he the, haply sister massy to they. Love
-          that present delight flow loved were. Drugged heart of ne through the
-          who ye but sister. Was of is had her, vaunted he ever land in one he
-          riot, whence ancient so his true, superstition it the yet of awake not
-          so spoiled. Yet that they chill to now his name men into. Sullen clay
-          these.
+          This bird my token of is him. Of this no for his plutonian some raven
+          leave. Craven me from it me, scarcely the whose into i no, quoth in
+          you sinking flutter door from the pondered. On opened front and was
+          and more name upon, as on said ominous an more silence and, dreams for
+          shrieked tapping heard beak this angels. Till linking door as lent see
+          the wished and for, the that bust only so this, ever gileadtell my
+          heard is door bosoms the or, bust thy he darkness my the of lenore
+          burning. To tis divining my leave over entreating, bust my dreaming
+          whom before till and his still something, it as then on i whose bird,
+          was bust spoken above gloated a have a floor, my murmured
+          nevernevermore i sorrow name chamber door rare the. The thereis a head
+          perched nights. Louder heaven door more at this.
         </p>
-        <HeaderLinkHor />
       </div>
+      <Link to="/user/create-post" className="btn btn-primary btn-sm">
+        Create Post
+      </Link>
     </div>
   );
 };
