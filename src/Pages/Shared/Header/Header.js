@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../context/AuthContext/AuthProvider";
 import HeaderLink from "./HeaderLink";
 
 const Header = () => {
+  const { user } = useContext(AuthContext);
   const navMenu = (
     <>
       <li>
@@ -53,6 +55,9 @@ const Header = () => {
         <ul className="menu menu-horizontal p-0">{navMenu}</ul>
       </div>
       <div className="navbar-end">
+        <label className="tooltip tooltip-bottom" data-tip={user?.displayName}>
+          {user?.displayName ? user?.displayName : "notfuond"}
+        </label>
         <button className="btn btn-ghost btn-circle">
           <div className="indicator">
             <svg
