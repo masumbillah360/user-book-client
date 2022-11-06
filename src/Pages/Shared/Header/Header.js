@@ -88,7 +88,7 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link to="/user/profile" className="justify-between">
+              <Link to="/user/update-profile" className="justify-between">
                 Update Profile
               </Link>
             </li>

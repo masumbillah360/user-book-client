@@ -11,25 +11,25 @@ const HeaderLink = () => {
         <Link to="/user/create-post">Create Post</Link>
       </li>
       <li className="hover-bordered">
-        <Link to="/">Your Post</Link>
+        <Link to="/user/profile">Your Post</Link>
       </li>
       <li className="hover-bordered">
-        <Link to="/">Group</Link>
+        <Link to="/user/profile">Group</Link>
       </li>
       <li className="hover-bordered">
-        <Link to="/">Pages</Link>
+        <Link to="/user/profile">Pages</Link>
       </li>
       <li className="hover-bordered">
-        <Link to="/">Friends</Link>
+        <Link to="/user/profile">Friends</Link>
       </li>
       <li className="hover-bordered">
-        <Link to="/">Live</Link>
+        <Link to="/user/profile">Live</Link>
       </li>
       <li className="hover-bordered">
-        <Link to="/">Videos</Link>
+        <Link to="/user/profile">Videos</Link>
       </li>
       <li className="hover-bordered">
-        <Link to="/">Join Live</Link>
+        <Link to="/user/profile">Join Live</Link>
       </li>
     </ul>
   );

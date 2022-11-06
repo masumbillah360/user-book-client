@@ -7,6 +7,7 @@ import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import NewsFeed from "../Pages/NewsFeed/NewsFeed";
 import Registration from "../Pages/Registration/Registration";
+import UpdateProfile from "../Pages/UserProfile/UpdateProfile";
 import UserProfie from "../Pages/UserProfile/UserProfie";
 
 export const router = createBrowserRouter([
@@ -28,6 +29,7 @@ export const router = createBrowserRouter([
       { path: "/user/profile", element: <UserProfie /> },
       { path: "/user/newsfeed", element: <NewsFeed /> },
       { path: "/user/create-post", element: <CreatePost /> },
+      { path: "/user/update-profile", element: <UpdateProfile /> },
     ],
   },
 ]);
