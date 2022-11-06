@@ -1,7 +1,11 @@
-import React from "react";
+import { createBrowserRouter } from "react-router-dom";
+import LayoutMain from "../Main/LayoutMain";
+import Login from "../Pages/Login/Login";
 
-const Router = () => {
-  return <div>here will be all public router</div>;
-};
-
-export default Router;
+export const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <LayoutMain />,
+    children: [{ path: "/", element: <Login /> }],
+  },
+]);

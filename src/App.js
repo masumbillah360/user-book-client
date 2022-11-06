@@ -1,24 +1,23 @@
-import { useState } from "react";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./Router/Router";
 
 function App() {
-  const [url, setUrl] = useState("");
-  console.log(url);
-  // console.log(URL.createObjectURL(url));
   return (
-    <div className="App">
-      <input
-        accept="image/*"
-        onChange={(e) => setUrl(URL.createObjectURL(e.target.files[0]))}
-        type="file"
-        name="image"
-      />
+    <RouterProvider router={router} />
+    // <div className="App">
+    //   <input
+    //     accept="image/*"
+    //     onChange={(e) => setUrl(URL.createObjectURL(e.target.files[0]))}
+    //     type="file"
+    //     name="image"
+    //   />
 
-      <img
-        style={{ height: "200px", width: "300px" }}
-        src={url}
-        alt="not found"
-      />
-    </div>
+    //   <img
+    //     style={{ height: "200px", width: "300px" }}
+    //     src={url}
+    //     alt="not found"
+    //   />
+    // </div>
   );
 }
 
