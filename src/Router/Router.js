@@ -5,6 +5,7 @@ import About from "../Pages/About/About";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import Registration from "../Pages/Registration/Registration";
+import UserProfie from "../Pages/UserProfile/UserProfie";
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +21,9 @@ export const router = createBrowserRouter([
   {
     path: "/home",
     element: <LayoutAuth />,
-    children: [{ path: "/home", element: <Home /> }],
+    children: [
+      { path: "/home", element: <Home /> },
+      { path: "/home/user", element: <UserProfie /> },
+    ],
   },
 ]);

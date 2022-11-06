@@ -3,7 +3,9 @@ import { router } from "./Router/Router";
 
 function App() {
   return (
-    <RouterProvider router={router} />
+    <div className="container mx-auto">
+      <RouterProvider router={router} />
+    </div>
     // <div className="App">
     //   <input
     //     accept="image/*"

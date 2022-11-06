@@ -1,9 +1,12 @@
 import React from "react";
+import HeaderLink from "../Header/HeaderLink";
 
 const LeftNav = () => {
   return (
     <div>
-      <h1>Left Nav will be Here</h1>
+      <div className="relative">
+        <HeaderLink />
+      </div>
     </div>
   );
 };
