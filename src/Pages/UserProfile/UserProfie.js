@@ -14,6 +14,7 @@ const UserProfie = () => {
       <div className="card-body text-center">
         <h2 className="font-bold text-3xl text-primary">Shoes!</h2>
         <p>Eamil : halumalu@gm.com </p>
+        <p>Phone : 2374234 </p>
         <p> About : If a dog chews shoes whose shoes does he choose?</p>
         <p>
           This bird my token of is him. Of this no for his plutonian some raven

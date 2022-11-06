@@ -11,7 +11,7 @@ const HeaderLink = () => {
         <Link to="/user/create-post">Create Post</Link>
       </li>
       <li className="hover-bordered">
-        <Link to="/user/profile">Your Post</Link>
+        <Link to="/user/viewpost">Your Post</Link>
       </li>
       <li className="hover-bordered">
         <Link to="/user/profile">Group</Link>

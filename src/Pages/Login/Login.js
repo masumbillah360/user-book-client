@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import SocialLogin from "./SocialLogin";
 
+import { AuthContext } from "../../context/AuthContext/AuthProvider";
+
 const Login = () => {
+  const { loginUser } = useContext(AuthContext);
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
+    loginUser(email, password)
+      .then((result) => console.log(result.user))
+      .catch((err) => console.log(err));
     console.log({ email, password });
   };
   return (
@@ -32,7 +38,7 @@ const Login = () => {
                 <span className="label-text">Email</span>
               </label>
               <input
-                type="text"
+                type="email"
                 name="email"
                 placeholder="email"
                 className="input input-bordered"

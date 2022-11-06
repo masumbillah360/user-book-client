@@ -4,18 +4,29 @@ import { AuthContext } from "../../../context/AuthContext/AuthProvider";
 import HeaderLink from "./HeaderLink";
 
 const Header = () => {
-  const { user } = useContext(AuthContext);
+  const { logOut, user, setUser } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut()
+      .then(() => setUser({}))
+      .catch((err) => setUser({}));
+  };
   const navMenu = (
     <>
-      <li>
-        <Link to="/about">About</Link>
-      </li>
-      <li>
-        <Link to="/signup">SignUp</Link>
-      </li>
-      <li>
-        <Link to="/login">Login</Link>
-      </li>
+      {user?.uid ? (
+        ""
+      ) : (
+        <>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/signup">SignUp</Link>
+          </li>
+          <li>
+            <Link to="/login">Login</Link>
+          </li>
+        </>
+      )}
     </>
   );
 
@@ -101,7 +112,7 @@ const Header = () => {
               <Link>Settings</Link>
             </li>
             <li>
-              <Link>Logout</Link>
+              <button onClick={handleLogOut}>Log Out</button>
             </li>
           </ul>
         </div>

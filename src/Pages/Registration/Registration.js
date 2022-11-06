@@ -17,6 +17,13 @@ const Registration = () => {
       .then((result) => {
         console.log(result.user);
         handleUpdate(name, phone);
+        fetch("http://localhost:5000/create-user", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify({ name, email, phone, password }),
+        });
       })
       .catch((err) => console.log(err));
   };

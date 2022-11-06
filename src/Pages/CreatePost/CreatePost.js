@@ -1,13 +1,35 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { AuthContext } from "../../context/AuthContext/AuthProvider";
 
 const CreatePost = () => {
+  const { user } = useContext(AuthContext);
+  const userEmail = user?.email;
+  const time = new Date().toTimeString().split(" ")[0];
+  const [imgUrl, setImgUrl] = useState("");
+  const handleSubmitPost = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const title = form.title.value;
+    const mind = form.mind.value;
+    const post = form.post.value;
+    const thumbUrl = imgUrl;
+    const postObj = { time, userEmail, title, mind, post, thumbUrl };
+    console.log(user);
+    fetch("http://localhost:5000/create-post", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(postObj),
+    }).catch((err) => console.log(err.message));
+  };
   return (
     <div className="mt-5">
       <h1 className="text-xl font-bold text-center my-3">
         Create Your Post Here!
       </h1>
       <div>
-        <form>
+        <form onSubmit={handleSubmitPost}>
           <div className="grid grid-cols-2 md:gap-5">
             <div className="form-control">
               <label htmlFor="title" className="label">
@@ -26,7 +48,7 @@ const CreatePost = () => {
               </label>
               <input
                 type="text"
-                name="mindset"
+                name="mind"
                 placeholder="Type here"
                 className="input input-bordered input-primary w-full"
               />
@@ -36,18 +58,21 @@ const CreatePost = () => {
                 Write Here Post Description
               </label>
               <textarea
-                name="desc"
+                name="post"
                 className="textarea textarea-primary w-full"
                 placeholder="Write Your Post Here"
                 rows="5"
               ></textarea>
             </div>
             <div className="form-control col-span-2">
-              <label htmlFor="thumb" className="label">
+              <label htmlFor="thumbUrl" className="label">
                 Upload Your Photo
               </label>
               <input
-                name="thumb"
+                onChange={(e) =>
+                  setImgUrl(URL.createObjectURL(e.target.files[0]))
+                }
+                name="thumbUrl"
                 type="file"
                 className="file-input file-input-bordered file-input-primary w-full max-w-xs"
               />
