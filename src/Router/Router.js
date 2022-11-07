@@ -10,6 +10,7 @@ import Registration from "../Pages/Registration/Registration";
 import UpdateProfile from "../Pages/UserProfile/UpdateProfile";
 import UserProfie from "../Pages/UserProfile/UserProfie";
 import ViewPost from "../Pages/ViewPost/ViewPost";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -24,14 +25,36 @@ export const router = createBrowserRouter([
   },
   {
     path: "/user",
-    element: <LayoutAuth />,
+    element: (
+      <PrivateRoute>
+        <LayoutAuth />
+      </PrivateRoute>
+    ),
     children: [
-      { path: "/user", element: <Home /> },
-      { path: "/user/profile", element: <UserProfie /> },
-      { path: "/user/newsfeed", element: <NewsFeed /> },
-      { path: "/user/create-post", element: <CreatePost /> },
-      { path: "/user/update-profile", element: <UpdateProfile /> },
-      { path: "/user/viewpost", element: <ViewPost /> },
+      {
+        path: "/user",
+        element: <Home />,
+      },
+      {
+        path: "/user/profile",
+        element: <UserProfie />,
+      },
+      {
+        path: "/user/newsfeed",
+        element: <NewsFeed />,
+      },
+      {
+        path: "/user/create-post",
+        element: <CreatePost />,
+      },
+      {
+        path: "/user/update-profile",
+        element: <UpdateProfile />,
+      },
+      {
+        path: "/user/viewpost",
+        element: <ViewPost />,
+      },
     ],
   },
 ]);

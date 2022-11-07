@@ -4,7 +4,7 @@ import HeaderLink from "../Header/HeaderLink";
 const LeftNav = () => {
   return (
     <div>
-      <div className="relative">
+      <div>
         <HeaderLink />
       </div>
     </div>

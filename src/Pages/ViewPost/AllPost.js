@@ -1,21 +1,21 @@
 import React from "react";
 
-const AllPost = () => {
+const AllPost = ({ postInfo }) => {
+  const { title, thumbUrl, post, mind, time } = postInfo;
   return (
-    <div>
+    <div className="my-6">
       <div className="card card-compact w-full bg-base-100 shadow-xl">
         <figure>
-          <img
-            className="w-full rounded-xl"
-            src="https://placeimg.com/400/225/arch"
-            alt="Shoes"
-          />
+          <img className="w-full rounded-xl" src={thumbUrl} alt="Shoes" />
         </figure>
         <div className="card-body">
-          <h2 className="card-title">Shoes!</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
-          <div className="card-actions justify-end">
-            <button className="btn btn-primary">Buy Now</button>
+          <span className="indicator-item badge badge-primary">{mind}</span>
+
+          <h2 className="card-title">{title}</h2>
+          <p>{post}</p>
+          <div className="card-actions justify-around items-center">
+            <p>Post Time : {time}</p>
+            <button className="btn btn-primary btn-sm">View Full Post</button>
           </div>
         </div>
       </div>

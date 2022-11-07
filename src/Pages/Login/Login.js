@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SocialLogin from "./SocialLogin";
 
 import { AuthContext } from "../../context/AuthContext/AuthProvider";
 
 const Login = () => {
+  const navigate = useNavigate();
   const { loginUser } = useContext(AuthContext);
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -12,7 +13,10 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
     loginUser(email, password)
-      .then((result) => console.log(result.user))
+      .then((result) => {
+        console.log(result.user);
+        navigate("/user/viewpost");
+      })
       .catch((err) => console.log(err));
     console.log({ email, password });
   };

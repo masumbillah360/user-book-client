@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import { AuthContext } from "../../context/AuthContext/AuthProvider";
 import SocialLogin from "../Login/SocialLogin";
 
 const Registration = () => {
   const { signInUser, updateUserInfo } = useContext(AuthContext);
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -24,6 +26,13 @@ const Registration = () => {
           },
           body: JSON.stringify({ name, email, phone, password }),
         });
+        Swal.fire({
+          title: "success",
+          text: "Congratulations, Your Account has been created successfully Please Login Now!",
+          icon: "success",
+        });
+        form.reset();
+        navigate("/login");
       })
       .catch((err) => console.log(err));
   };

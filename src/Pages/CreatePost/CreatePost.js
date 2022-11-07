@@ -1,18 +1,17 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext/AuthProvider";
 
 const CreatePost = () => {
   const { user } = useContext(AuthContext);
   const userEmail = user?.email;
   const time = new Date().toTimeString().split(" ")[0];
-  const [imgUrl, setImgUrl] = useState("");
   const handleSubmitPost = (e) => {
     e.preventDefault();
     const form = e.target;
     const title = form.title.value;
     const mind = form.mind.value;
     const post = form.post.value;
-    const thumbUrl = imgUrl;
+    const thumbUrl = form.thumbUrl.value;
     const postObj = { time, userEmail, title, mind, post, thumbUrl };
     console.log(user);
     fetch("http://localhost:5000/create-post", {
@@ -69,12 +68,10 @@ const CreatePost = () => {
                 Upload Your Photo
               </label>
               <input
-                onChange={(e) =>
-                  setImgUrl(URL.createObjectURL(e.target.files[0]))
-                }
+                type="text"
                 name="thumbUrl"
-                type="file"
-                className="file-input file-input-bordered file-input-primary w-full max-w-xs"
+                placeholder="Enter your Photo URL"
+                className="input input-bordered input-primary w-full"
               />
             </div>
           </div>
