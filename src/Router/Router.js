@@ -9,6 +9,7 @@ import NewsFeed from "../Pages/NewsFeed/NewsFeed";
 import Registration from "../Pages/Registration/Registration";
 import UpdateProfile from "../Pages/UserProfile/UpdateProfile";
 import UserProfie from "../Pages/UserProfile/UserProfie";
+import PostDetails from "../Pages/ViewPost/PostDetails";
 import ViewPost from "../Pages/ViewPost/ViewPost";
 import PrivateRoute from "./PrivateRoute";
 
@@ -54,6 +55,12 @@ export const router = createBrowserRouter([
       {
         path: "/user/viewpost",
         element: <ViewPost />,
+      },
+      {
+        path: "/user/viewpost/:id",
+        element: <PostDetails />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/allpost/${params.id}`),
       },
     ],
   },
