@@ -4,7 +4,7 @@ import { AuthContext } from "../../context/AuthContext/AuthProvider";
 const CreatePost = () => {
   const { user } = useContext(AuthContext);
   const userEmail = user?.email;
-  const time = new Date().toTimeString().split(" ")[0];
+  const time = `Date: ${new Date().getDate()} Month: ${new Date().getMonth()} Year : ${new Date().getFullYear()}`;
   const handleSubmitPost = (e) => {
     e.preventDefault();
     const form = e.target;
