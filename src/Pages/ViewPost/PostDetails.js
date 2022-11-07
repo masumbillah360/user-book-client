@@ -1,11 +1,16 @@
 import React from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 
 const PostDetails = () => {
   const postInfo = useLoaderData();
   const { _id, title, thumbUrl, post, mind, time } = postInfo;
+  const navigate = useNavigate();
   const handleDelete = (id) => {
-    console.log(id);
+    fetch(`http://localhost:5000/allpost/${id}`, {
+      method: "DELETE",
+    })
+      .then(() => navigate("/user/viewpost"))
+      .catch((err) => console.log(err));
   };
   return (
     <div className="my-6">
