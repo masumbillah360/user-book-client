@@ -28,7 +28,11 @@ const ViewPost = () => {
           ))}
         </div>
         {[...Array(pages).keys()].map((num) => (
-          <button onClick={() => setPage(num)} className="btn btn-ghost ml-2">
+          <button
+            key={num}
+            onClick={() => setPage(num)}
+            className="btn btn-ghost ml-2"
+          >
             {num + 1}
           </button>
         ))}

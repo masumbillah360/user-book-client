@@ -26,7 +26,12 @@ const PostDetails = () => {
           <div className="card-actions justify-around items-center">
             <p>Post Time : {time}</p>
             <div className="flex justify-end items-center">
-              <Link className="btn btn-primary btn-sm mr-3">Update</Link>
+              <Link
+                to={`/user/update-post/${_id}`}
+                className="btn btn-primary btn-sm mr-3"
+              >
+                Update
+              </Link>
               <button
                 onClick={() => handleDelete(_id)}
                 className="btn btn-error btn-sm"

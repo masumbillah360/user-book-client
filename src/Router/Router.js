@@ -7,6 +7,7 @@ import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import NewsFeed from "../Pages/NewsFeed/NewsFeed";
 import Registration from "../Pages/Registration/Registration";
+import UpdatePost from "../Pages/UpdatePost/UpdatePost";
 import UpdateProfile from "../Pages/UserProfile/UpdateProfile";
 import UserProfie from "../Pages/UserProfile/UserProfie";
 import PostDetails from "../Pages/ViewPost/PostDetails";
@@ -59,6 +60,12 @@ export const router = createBrowserRouter([
       {
         path: "/user/viewpost/:id",
         element: <PostDetails />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/allpost/${params.id}`),
+      },
+      {
+        path: "/user/update-post/:id",
+        element: <UpdatePost />,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/allpost/${params.id}`),
       },
