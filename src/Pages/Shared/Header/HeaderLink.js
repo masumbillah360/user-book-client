@@ -20,7 +20,7 @@ const HeaderLink = () => {
         <Link to="/user/profile">Pages</Link>
       </li>
       <li className="hover-bordered">
-        <Link to="/user/profile">Friends</Link>
+        <Link to="/user/friends">Friends</Link>
       </li>
       <li className="hover-bordered">
         <Link to="/user/profile">Live</Link>
