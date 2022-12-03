@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import AllPost from "./AllPost";
+import SignlePost from "./SinglePost";
 
 const ViewPost = () => {
   const [post, setPost] = useState([]);
@@ -28,7 +28,7 @@ const ViewPost = () => {
       <div>
         <div className="grid grid-cols-2 md:gap-4">
           {post?.map((p) => (
-            <AllPost key={p._id} postInfo={p} />
+            <SignlePost key={p._id} postInfo={p} />
           ))}
         </div>
         {[...Array(pages)?.keys()]?.map((num) => (

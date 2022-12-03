@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const AllPost = ({ postInfo }) => {
+const SignlePost = ({ postInfo }) => {
   const { _id, title, thumbUrl, post, mind, time } = postInfo;
   return (
     <div className="my-6">
@@ -29,4 +29,4 @@ const AllPost = ({ postInfo }) => {
   );
 };
 
-export default AllPost;
+export default SignlePost;
