@@ -15,6 +15,19 @@ const Login = () => {
     loginUser(email, password)
       .then((result) => {
         console.log(result.user);
+        const userEmail = result.user.email;
+        fetch("http://localhost:5000/jwt", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify({ userEmail }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            localStorage.setItem("gin-token", data.token);
+          })
+          .catch((err) => console.log(err));
         navigate("/user/viewpost");
       })
       .catch((err) => console.log(err));

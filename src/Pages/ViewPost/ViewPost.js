@@ -7,7 +7,11 @@ const ViewPost = () => {
   const [count, setCount] = useState(0);
   const [size, setSize] = useState(10);
   useEffect(() => {
-    fetch(`http://localhost:5000/allpost?page=${page}&size=${size}`)
+    fetch(`http://localhost:5000/allpost?page=${page}&size=${size}`, {
+      headers: {
+        authorization: `Bearar ${localStorage.getItem("gin-token")}`,
+      },
+    })
       .then((res) => res.json())
       .then((data) => {
         setPost(data.result);
@@ -22,12 +26,12 @@ const ViewPost = () => {
         Your All Posts Are Here...
       </h1>
       <div>
-        <div>
-          {post.map((p) => (
+        <div className="grid grid-cols-2 md:gap-4">
+          {post?.map((p) => (
             <AllPost key={p._id} postInfo={p} />
           ))}
         </div>
-        {[...Array(pages).keys()].map((num) => (
+        {[...Array(pages)?.keys()]?.map((num) => (
           <button
             key={num}
             onClick={() => setPage(num)}
