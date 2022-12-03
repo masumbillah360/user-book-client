@@ -23,6 +23,9 @@ const HeaderLink = () => {
         <Link to="/user/friends">Friends</Link>
       </li>
       <li className="hover-bordered">
+        <Link to="/user/peoples">Show People</Link>
+      </li>
+      <li className="hover-bordered">
         <Link to="/user/profile">Live</Link>
       </li>
       <li className="hover-bordered">

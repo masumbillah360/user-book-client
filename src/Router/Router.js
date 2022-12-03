@@ -8,6 +8,7 @@ import Login from "../Pages/Login/Login";
 import NewsFeed from "../Pages/NewsFeed/NewsFeed";
 import Registration from "../Pages/Registration/Registration";
 import AllFriends from "../Pages/Shared/AllFriends/AllFriends";
+import AllPeople from "../Pages/Shared/AllPeople/AllPeople";
 import UpdatePost from "../Pages/UpdatePost/UpdatePost";
 import UpdateProfile from "../Pages/UserProfile/UpdateProfile";
 import UserProfie from "../Pages/UserProfile/UserProfie";
@@ -45,6 +46,10 @@ export const router = createBrowserRouter([
       {
         path: "/user/friends",
         element: <AllFriends />,
+      },
+      {
+        path: "/user/peoples",
+        element: <AllPeople />,
       },
       {
         path: "/user/newsfeed",
