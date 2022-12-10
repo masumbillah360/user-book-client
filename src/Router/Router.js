@@ -1,9 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import LayoutAuth from "../Main/LayoutAuth";
-import LayoutMain from "../Main/LayoutMain";
 import About from "../Pages/About/About";
 import CreatePost from "../Pages/CreatePost/CreatePost";
-import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import NewsFeed from "../Pages/NewsFeed/NewsFeed";
 import Registration from "../Pages/Registration/Registration";
@@ -17,18 +15,11 @@ import ViewPost from "../Pages/ViewPost/ViewPost";
 import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
+  { path: "/login", element: <Login /> },
+  { path: "/about", element: <About /> },
+  { path: "/signup", element: <Registration /> },
   {
     path: "/",
-    element: <LayoutMain />,
-    children: [
-      { path: "/", element: <Login /> },
-      { path: "/login", element: <Login /> },
-      { path: "/about", element: <About /> },
-      { path: "/signup", element: <Registration /> },
-    ],
-  },
-  {
-    path: "/user",
     element: (
       <PrivateRoute>
         <LayoutAuth />
@@ -36,23 +27,23 @@ export const router = createBrowserRouter([
     ),
     children: [
       {
-        path: "/user",
-        element: <Home />,
+        path: "/",
+        element: <NewsFeed />,
       },
       {
-        path: "/user/profile",
+        path: "/profile",
         element: <UserProfie />,
       },
       {
-        path: "/user/friends",
+        path: "/friends",
         element: <AllFriends />,
       },
       {
-        path: "/user/peoples",
+        path: "/peoples",
         element: <AllPeople />,
       },
       {
-        path: "/user/newsfeed",
+        path: "/newsfeed",
         element: <NewsFeed />,
       },
       {

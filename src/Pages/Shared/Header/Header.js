@@ -58,7 +58,10 @@ const Header = () => {
             <>{user?.uid && <HeaderLink />}</>
           </ul>
         </div>
-        <Link className="btn btn-ghost text-primary normal-uppercase text-xl">
+        <Link
+          to="/newsfeed"
+          className="btn btn-ghost text-primary normal-uppercase text-xl"
+        >
           UserBook
         </Link>
       </div>
@@ -70,7 +73,7 @@ const Header = () => {
         {user?.uid && (
           <div className="navbar-end">
             <label
-              className="tooltip tooltip-bottom"
+              className="tooltip tooltip-bottom hidden md:block"
               data-tip={user?.displayName}
             >
               {user?.displayName ? user?.displayName : "notfuond"}
@@ -106,9 +109,10 @@ const Header = () => {
               >
                 <li>
                   <Link to="/user/profile" className="justify-between">
-                    Profile
+                    {user?.displayName}
                   </Link>
                 </li>
+
                 <li>
                   <Link to="/user/update-profile" className="justify-between">
                     Update Profile

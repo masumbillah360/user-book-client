@@ -5,7 +5,7 @@ const HeaderLink = () => {
   return (
     <ul className="menu bg-base-100 rounded-box">
       <li className="hover-bordered">
-        <Link to="/user/newsfeed">News Feed</Link>
+        <Link to="/newsfeed">News Feed</Link>
       </li>
       <li className="hover-bordered">
         <Link to="/user/create-post">Create Post</Link>
@@ -20,13 +20,13 @@ const HeaderLink = () => {
         <Link to="/user/profile">Pages</Link>
       </li>
       <li className="hover-bordered">
-        <Link to="/user/friends">Friends</Link>
+        <Link to="/friends">Friends</Link>
       </li>
       <li className="hover-bordered">
-        <Link to="/user/peoples">Show People</Link>
+        <Link to="/peoples">Show People</Link>
       </li>
       <li className="hover-bordered">
-        <Link to="/user/profile">Live</Link>
+        <Link to="/profile">Live</Link>
       </li>
       <li className="hover-bordered">
         <Link to="/user/profile">Videos</Link>
