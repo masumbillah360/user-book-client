@@ -16,10 +16,9 @@ const UsersCard = ({ usersInfo }) => {
         <p>{usersInfo?.email}</p>
         <p>City: {usersInfo?.address?.city}</p>
         <div className="card-actions justify-center gap-2 mt-2">
-          {usersInfo?.friend && (
-            <button className="btn btn-primary btn-sm">Message</button>
-          )}
           <button className="btn btn-primary btn-sm">Add Friend</button>
+
+          <button className="btn btn-primary btn-sm">Message</button>
         </div>
       </div>
     </div>

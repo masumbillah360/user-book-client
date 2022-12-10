@@ -12,7 +12,7 @@ const AllPeople = () => {
   } = useQuery({
     queryKey: ["allPeople"],
     queryFn: async () => {
-      const res = await fetch("https://jsonplaceholder.typicode.com/users");
+      const res = await fetch("http://localhost:5000/create-user");
       const data = await res.json();
       return data;
     },
